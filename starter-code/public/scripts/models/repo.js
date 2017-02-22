@@ -11,10 +11,11 @@
       url: 'https://api.github.com/user/repos?type=owner',
       method: 'GET',
       headers: {
-        Authorization: 'token eb906363787e10a85c462ef5ab5619d559e5b161'
+        'Authorization': `${githubToken}`
       }
     })
-    callback();
+    .then(data => repos.all = data, err => console.error(err))
+    .then(callback);
   };
 
   // REVIEW: Model method that filters the full collection for repos with a particular attribute.
