@@ -16,6 +16,7 @@
 
   repoView.index = function() {
     ui();
+    var render = Handlebars.compile($('#repo-template').text());
 
     // The jQuery `append` method lets us append an entire array of HTML elements at once:
     $('#about ul').append(
